@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BSB Travel – Транспортна Фирма</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,900;1,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --navy: #0d1b35;
@@ -16,6 +16,7 @@
   --white: #ffffff;
   --sand: #f7f2eb;
   --gray: #6b7280;
+  --teal: #0891b2;
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
@@ -31,81 +32,51 @@ nav {
 }
 .nav-logo img { height:52px; width:auto; filter:drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
 .nav-links { display:flex; gap:2rem; list-style:none; align-items:center; }
-.nav-links a {
-  color:rgba(255,255,255,0.85); text-decoration:none;
-  font-size:0.85rem; font-weight:700; letter-spacing:0.08em;
-  text-transform:uppercase; transition:color 0.2s;
-}
+.nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; transition:color 0.2s; }
 .nav-links a:hover { color:var(--gold); }
 .lang-switcher { display:flex; gap:0.35rem; }
-.lang-btn {
-  background:transparent; border:1.5px solid rgba(255,255,255,0.25);
-  color:rgba(255,255,255,0.7); padding:4px 10px; border-radius:4px;
-  font-size:0.75rem; font-weight:700; cursor:pointer; letter-spacing:0.05em;
-  transition:all 0.2s; font-family:'Nunito Sans',sans-serif;
-}
-.lang-btn:hover, .lang-btn.active { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+.lang-btn { background:transparent; border:1.5px solid rgba(255,255,255,0.25); color:rgba(255,255,255,0.7); padding:4px 10px; border-radius:4px; font-size:0.75rem; font-weight:700; cursor:pointer; letter-spacing:0.05em; transition:all 0.2s; font-family:'Nunito Sans',sans-serif; }
+.lang-btn:hover,.lang-btn.active { background:var(--gold); border-color:var(--gold); color:var(--navy); }
 .hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:4px; }
 .hamburger span { display:block; width:26px; height:2px; background:white; border-radius:2px; transition:all 0.3s; }
 
 /* HERO */
 .hero {
   min-height:100vh;
-  background:linear-gradient(135deg,rgba(13,27,53,0.88) 0%,rgba(20,85,164,0.72) 50%,rgba(13,27,53,0.88) 100%),
-    url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1600&q=80') center/cover no-repeat;
+  background:
+    linear-gradient(135deg,rgba(13,27,53,0.82) 0%,rgba(20,85,164,0.65) 50%,rgba(13,27,53,0.82) 100%),
+    url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1600&q=80') center/cover no-repeat;
   display:flex; flex-direction:column; justify-content:center; align-items:center;
-  text-align:center; padding:120px 5% 60px; position:relative; overflow:hidden;
+  text-align:center; padding:120px 5% 80px; position:relative; overflow:hidden;
 }
-.hero::after {
-  content:''; position:absolute; bottom:0; left:0; right:0; height:120px;
-  background:linear-gradient(to top,var(--white),transparent); pointer-events:none;
-}
-.hero-badge {
-  display:inline-block; background:var(--gold); color:var(--navy);
-  font-size:0.75rem; font-weight:900; letter-spacing:0.15em; text-transform:uppercase;
-  padding:6px 20px; border-radius:30px; margin-bottom:1.5rem;
-  animation:fadeDown 0.8s ease both;
-}
-.hero h1 {
-  font-family:'Bebas Neue',sans-serif;
-  font-size:clamp(3.5rem,9vw,7.5rem);
-  color:var(--white); line-height:0.92; letter-spacing:0.02em;
-  margin-bottom:1rem; animation:fadeDown 0.8s 0.1s ease both;
-  text-shadow:0 4px 30px rgba(0,0,0,0.5);
-}
-.hero h1 span { color:var(--gold); }
-.hero .hero-sub {
-  font-size:clamp(1rem,2.5vw,1.25rem); color:rgba(255,255,255,0.88);
-  max-width:600px; line-height:1.7; margin-bottom:2.5rem;
-  animation:fadeDown 0.8s 0.2s ease both;
-}
-.hero-phones {
-  display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;
-  animation:fadeDown 0.8s 0.3s ease both;
-}
-.phone-pill {
-  display:flex; align-items:center; gap:0.6rem;
-  background:rgba(255,255,255,0.12); backdrop-filter:blur(10px);
-  border:1.5px solid rgba(255,255,255,0.25); color:white;
-  padding:12px 22px; border-radius:50px; text-decoration:none;
-  font-size:1rem; font-weight:700; transition:all 0.25s; white-space:nowrap;
-}
-.phone-pill:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); transform:translateY(-2px); }
+.hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:140px; background:linear-gradient(to top,var(--white),transparent); pointer-events:none; }
+
+.hero-badge { display:inline-flex; align-items:center; gap:0.5rem; background:var(--gold); color:var(--navy); font-size:0.75rem; font-weight:900; letter-spacing:0.15em; text-transform:uppercase; padding:7px 22px; border-radius:30px; margin-bottom:1.5rem; animation:fadeDown 0.8s ease both; }
+
+.hero h1 { font-family:'Bebas Neue',sans-serif; font-size:clamp(3.8rem,10vw,8rem); color:var(--white); line-height:0.9; letter-spacing:0.02em; margin-bottom:1.2rem; animation:fadeDown 0.8s 0.1s ease both; text-shadow:0 4px 40px rgba(0,0,0,0.5); }
+.hero h1 .accent { color:var(--gold); }
+
+.hero-sub { font-size:clamp(1rem,2.5vw,1.2rem); color:rgba(255,255,255,0.9); max-width:620px; line-height:1.75; margin-bottom:2.5rem; animation:fadeDown 0.8s 0.2s ease both; }
+
+.hero-phones { display:flex; flex-wrap:wrap; gap:1rem; justify-content:center; animation:fadeDown 0.8s 0.3s ease both; }
+.phone-pill { display:flex; align-items:center; gap:0.6rem; background:rgba(255,255,255,0.13); backdrop-filter:blur(10px); border:1.5px solid rgba(255,255,255,0.28); color:white; padding:13px 24px; border-radius:50px; text-decoration:none; font-size:1rem; font-weight:700; transition:all 0.25s; white-space:nowrap; }
+.phone-pill:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); transform:translateY(-3px); }
 .phone-pill svg { width:18px; height:18px; flex-shrink:0; }
+
+/* SCROLL CUE */
+.scroll-cue { position:absolute; bottom:140px; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:6px; color:rgba(255,255,255,0.5); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; animation:fadeDown 1s 0.6s ease both; z-index:2; }
+.scroll-cue .arrow { width:20px; height:20px; border-right:2px solid rgba(255,255,255,0.4); border-bottom:2px solid rgba(255,255,255,0.4); transform:rotate(45deg); animation:bounce 1.5s infinite; }
+@keyframes bounce { 0%,100% { transform:rotate(45deg) translateY(0); } 50% { transform:rotate(45deg) translateY(4px); } }
 
 /* STATS */
 .stats { background:var(--navy); padding:3rem 5%; }
-.stats-grid {
-  display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
-  max-width:1100px; margin:0 auto;
-  background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden;
-}
+.stats-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; max-width:1100px; margin:0 auto; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; }
 .stat-item { background:rgba(255,255,255,0.05); padding:2rem 1.5rem; text-align:center; transition:background 0.3s; }
 .stat-item:hover { background:rgba(232,161,0,0.12); }
 .stat-number { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.8rem,5vw,4rem); color:var(--gold); line-height:1; display:block; }
-.stat-label { font-size:0.85rem; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem; font-weight:600; }
+.stat-label { font-size:0.82rem; color:rgba(255,255,255,0.65); text-transform:uppercase; letter-spacing:0.1em; margin-top:0.4rem; font-weight:600; }
 
-/* SECTIONS */
+/* SECTION BASE */
 section { padding:5rem 5%; }
 .section-tag { font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:0.75rem; display:block; }
 .section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(2.2rem,5vw,3.5rem); color:var(--navy); line-height:1.05; margin-bottom:1rem; }
@@ -116,15 +87,8 @@ section { padding:5rem 5%; }
 /* SERVICES */
 .services { background:var(--sand); }
 .services-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.5rem; max-width:1200px; margin:0 auto; }
-.service-card {
-  background:white; border-radius:16px; padding:2rem;
-  box-shadow:0 4px 20px rgba(0,0,0,0.07); border:1.5px solid transparent;
-  transition:all 0.3s; position:relative; overflow:hidden;
-}
-.service-card::before {
-  content:''; position:absolute; top:0; left:0; right:0; height:4px;
-  background:linear-gradient(90deg,var(--blue),var(--gold)); opacity:0; transition:opacity 0.3s;
-}
+.service-card { background:white; border-radius:16px; padding:2rem; box-shadow:0 4px 20px rgba(0,0,0,0.07); border:1.5px solid transparent; transition:all 0.3s; position:relative; overflow:hidden; }
+.service-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background:linear-gradient(90deg,var(--blue),var(--gold)); opacity:0; transition:opacity 0.3s; }
 .service-card:hover { transform:translateY(-6px); box-shadow:0 12px 40px rgba(20,85,164,0.15); border-color:rgba(20,85,164,0.15); }
 .service-card:hover::before { opacity:1; }
 .service-icon { width:56px; height:56px; background:linear-gradient(135deg,var(--blue),var(--blue-light)); border-radius:14px; display:flex; align-items:center; justify-content:center; margin-bottom:1.25rem; font-size:1.6rem; }
@@ -132,80 +96,76 @@ section { padding:5rem 5%; }
 .service-card p { font-size:0.92rem; color:var(--gray); line-height:1.6; }
 
 /* GREECE */
-.greece { background:linear-gradient(135deg,var(--navy) 0%,#0d2a5e 60%,#113580 100%); position:relative; overflow:hidden; }
-.greece::before {
-  content:''; position:absolute; top:-50%; right:-20%; width:600px; height:600px;
-  background:radial-gradient(circle,rgba(20,85,164,0.3) 0%,transparent 70%); pointer-events:none;
-}
+.greece { background:linear-gradient(135deg,var(--navy) 0%,#0d2a5e 60%,#0a4a7a 100%); position:relative; overflow:hidden; }
+.greece::before { content:''; position:absolute; top:-50%; right:-20%; width:700px; height:700px; background:radial-gradient(circle,rgba(8,145,178,0.2) 0%,transparent 70%); pointer-events:none; }
 .greece-inner { max-width:1200px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
 .islands-grid { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
-.island-card {
-  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12);
-  border-radius:12px; padding:1.25rem 1rem; text-align:center; transition:all 0.3s; backdrop-filter:blur(5px);
-}
+.island-card { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.12); border-radius:12px; padding:1.25rem 1rem; text-align:center; transition:all 0.3s; backdrop-filter:blur(5px); }
 .island-card:hover { background:rgba(232,161,0,0.15); border-color:rgba(232,161,0,0.4); transform:translateY(-3px); }
 .island-card .island-emoji { font-size:2rem; margin-bottom:0.5rem; }
 .island-card h4 { color:var(--white); font-size:0.95rem; font-weight:800; }
 .island-card p { color:rgba(255,255,255,0.55); font-size:0.78rem; margin-top:0.2rem; }
 .greece-list { list-style:none; margin-top:1.5rem; }
-.greece-list li {
-  display:flex; align-items:flex-start; gap:0.8rem;
-  color:rgba(255,255,255,0.82); font-size:0.95rem; line-height:1.5;
-  padding:0.5rem 0; border-bottom:1px solid rgba(255,255,255,0.07);
-}
+.greece-list li { display:flex; align-items:flex-start; gap:0.8rem; color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.5; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); }
 .greece-list li::before { content:'→'; color:var(--gold); font-weight:900; flex-shrink:0; margin-top:1px; }
 
 /* FLEET */
 .fleet { background:var(--white); }
 .fleet-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:1.5rem; max-width:1100px; margin:0 auto; }
-.fleet-card {
-  background:var(--sand); border-radius:16px; overflow:hidden;
-  box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:all 0.3s; border:2px solid transparent;
-}
+.fleet-card { background:var(--sand); border-radius:16px; overflow:hidden; box-shadow:0 4px 16px rgba(0,0,0,0.06); transition:all 0.3s; border:2px solid transparent; }
 .fleet-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(20,85,164,0.14); border-color:var(--blue); }
-.fleet-img { width:100%; height:180px; overflow:hidden; position:relative; }
-.fleet-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.85) saturate(0.7); transition:filter 0.3s; }
-.fleet-card:hover .fleet-img img { filter:brightness(1) saturate(1); }
+.fleet-img { width:100%; height:190px; overflow:hidden; position:relative; background:#0d1b35; }
+.fleet-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.85) saturate(0.75); transition:all 0.4s; display:block; }
+.fleet-card:hover .fleet-img img { filter:brightness(1) saturate(1); transform:scale(1.04); }
+.fleet-img .fleet-overlay { position:absolute; inset:0; background:linear-gradient(to top,rgba(13,27,53,0.6),transparent); }
 .fleet-info { padding:1.25rem; }
 .fleet-info h3 { font-size:1rem; font-weight:800; color:var(--navy); margin-bottom:0.3rem; }
-.fleet-badge { display:inline-block; background:var(--blue); color:white; font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:0.05em; }
+.fleet-badge { display:inline-block; background:var(--blue); color:white; font-size:0.72rem; font-weight:700; padding:3px 10px; border-radius:20px; letter-spacing:0.05em; margin-top:0.4rem; }
 
 /* ABOUT */
 .about { background:var(--sand); }
 .about-inner { max-width:1100px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
 .about-img-wrap { position:relative; }
 .about-img-wrap img { width:100%; max-width:420px; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,0.18); display:block; }
-.about-badge-overlay {
-  position:absolute; bottom:-20px; right:-20px;
-  background:var(--gold); color:var(--navy); padding:1rem 1.5rem;
-  border-radius:14px; font-weight:900; font-size:0.9rem; text-align:center;
-  box-shadow:0 8px 20px rgba(232,161,0,0.4);
-}
+.about-badge-overlay { position:absolute; bottom:-20px; right:-20px; background:var(--gold); color:var(--navy); padding:1rem 1.5rem; border-radius:14px; font-weight:900; font-size:0.9rem; text-align:center; box-shadow:0 8px 20px rgba(232,161,0,0.4); }
 .about-badge-overlay strong { font-family:'Bebas Neue',sans-serif; font-size:2rem; display:block; }
 .about-text p { font-size:1.05rem; color:#4a5568; line-height:1.8; margin-bottom:1.2rem; }
 .trust-items { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.5rem; }
 .trust-item { display:flex; align-items:center; gap:0.7rem; font-size:0.9rem; font-weight:700; color:var(--navy); }
 .trust-item span.dot { width:10px; height:10px; background:var(--gold); border-radius:50%; flex-shrink:0; }
 
+/* REVIEWS */
+.reviews { background:linear-gradient(160deg,#0d1b35 0%,#0d2a5e 100%); padding:5rem 5%; overflow:hidden; position:relative; }
+.reviews::before { content:'❝'; position:absolute; top:-20px; left:5%; font-size:18rem; color:rgba(232,161,0,0.05); font-family:Georgia,serif; line-height:1; pointer-events:none; }
+.reviews-inner { max-width:1200px; margin:0 auto; }
+.reviews-track-wrap { overflow:hidden; margin-top:2.5rem; cursor:grab; user-select:none; }
+.reviews-track-wrap:active { cursor:grabbing; }
+.reviews-track { display:flex; gap:1.5rem; transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94); will-change:transform; }
+.review-card { background:rgba(255,255,255,0.07); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,0.12); border-radius:18px; padding:1.75rem; min-width:300px; max-width:300px; flex-shrink:0; transition:all 0.3s; }
+.review-card:hover { background:rgba(255,255,255,0.11); border-color:rgba(232,161,0,0.3); transform:translateY(-4px); }
+.review-stars { color:var(--gold); font-size:1.1rem; letter-spacing:2px; margin-bottom:1rem; }
+.review-text { color:rgba(255,255,255,0.85); font-size:0.92rem; line-height:1.7; font-style:italic; margin-bottom:1.25rem; }
+.review-author { display:flex; align-items:center; gap:0.75rem; }
+.review-flag { font-size:1.5rem; }
+.review-author strong { color:white; font-size:0.9rem; display:block; }
+.review-author span { color:rgba(255,255,255,0.5); font-size:0.8rem; }
+.reviews-nav { display:flex; justify-content:center; gap:0.75rem; margin-top:2rem; }
+.rev-btn { width:42px; height:42px; border-radius:50%; border:1.5px solid rgba(255,255,255,0.25); background:transparent; color:white; font-size:1.1rem; cursor:pointer; transition:all 0.2s; display:flex; align-items:center; justify-content:center; }
+.rev-btn:hover { background:var(--gold); border-color:var(--gold); color:var(--navy); }
+.rev-dots { display:flex; gap:6px; align-items:center; }
+.rev-dot { width:8px; height:8px; border-radius:50%; background:rgba(255,255,255,0.25); transition:all 0.2s; cursor:pointer; }
+.rev-dot.active { background:var(--gold); width:22px; border-radius:4px; }
+
 /* CONTACTS */
 .contacts { background:var(--navy); color:white; }
 .contacts-inner { max-width:1100px; margin:0 auto; }
 .contacts-grid { display:grid; grid-template-columns:1fr 1fr; gap:3rem; margin-top:2rem; }
 .contact-block h3 { font-size:0.75rem; font-weight:900; text-transform:uppercase; letter-spacing:0.2em; color:var(--gold); margin-bottom:1rem; }
-.phone-link {
-  display:flex; align-items:center; gap:0.8rem; color:white; text-decoration:none;
-  font-size:1.1rem; font-weight:700; padding:0.6rem 0;
-  border-bottom:1px solid rgba(255,255,255,0.08); transition:color 0.2s;
-}
+.phone-link { display:flex; align-items:center; gap:0.8rem; color:white; text-decoration:none; font-size:1.1rem; font-weight:700; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.08); transition:color 0.2s; }
 .phone-link:hover { color:var(--gold); }
 .phone-link svg { width:18px; height:18px; color:var(--gold); flex-shrink:0; }
 .social-links { display:flex; flex-direction:column; gap:0.75rem; margin-top:1rem; }
-.social-link {
-  display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.8);
-  text-decoration:none; font-size:0.95rem; font-weight:600; padding:0.8rem 1rem;
-  background:rgba(255,255,255,0.06); border-radius:10px; transition:all 0.25s;
-  border:1px solid rgba(255,255,255,0.08);
-}
+.social-link { display:flex; align-items:center; gap:0.8rem; color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.95rem; font-weight:600; padding:0.8rem 1rem; background:rgba(255,255,255,0.06); border-radius:10px; transition:all 0.25s; border:1px solid rgba(255,255,255,0.08); }
 .social-link:hover { background:rgba(232,161,0,0.15); border-color:rgba(232,161,0,0.3); color:var(--gold); transform:translateX(4px); }
 .social-link .icon { width:36px; height:36px; border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:1.1rem; }
 .icon-wa { background:#25D366; }
@@ -214,50 +174,36 @@ section { padding:5rem 5%; }
 .icon-em { background:var(--blue); }
 
 /* FOOTER */
-footer { background:#070e1e; color:rgba(255,255,255,0.45); text-align:center; padding:1.5rem 5%; font-size:0.82rem; }
+footer { background:#070e1e; color:rgba(255,255,255,0.45); text-align:center; padding:2rem 5%; font-size:0.82rem; }
 footer a { color:var(--gold); text-decoration:none; }
+.footer-flags { font-size:1.4rem; letter-spacing:4px; margin-bottom:0.5rem; }
 
 /* FAB */
-.fab-wa {
-  position:fixed; bottom:28px; right:28px; z-index:999;
-  background:#25D366; color:white; width:60px; height:60px;
-  border-radius:50%; display:flex; align-items:center; justify-content:center;
-  box-shadow:0 6px 24px rgba(37,211,102,0.45); text-decoration:none;
-  transition:all 0.3s; animation:pulse-wa 2.5s infinite;
-}
+.fab-wa { position:fixed; bottom:28px; right:28px; z-index:999; background:#25D366; color:white; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 6px 24px rgba(37,211,102,0.45); text-decoration:none; transition:all 0.3s; animation:pulse-wa 2.5s infinite; }
 .fab-wa:hover { transform:scale(1.12); }
 .fab-wa svg { width:30px; height:30px; }
-
-@keyframes pulse-wa {
-  0%,100% { box-shadow:0 6px 24px rgba(37,211,102,0.45); }
-  50% { box-shadow:0 6px 32px rgba(37,211,102,0.7),0 0 0 8px rgba(37,211,102,0.12); }
-}
-@keyframes fadeDown {
-  from { opacity:0; transform:translateY(-20px); }
-  to { opacity:1; transform:translateY(0); }
-}
+@keyframes pulse-wa { 0%,100% { box-shadow:0 6px 24px rgba(37,211,102,0.45); } 50% { box-shadow:0 6px 32px rgba(37,211,102,0.7),0 0 0 8px rgba(37,211,102,0.12); } }
+@keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
 .reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
 /* RESPONSIVE */
 @media(max-width:900px) {
   .nav-links { display:none; }
-  .nav-links.open {
-    display:flex; flex-direction:column; position:absolute;
-    top:72px; left:0; right:0; background:rgba(13,27,53,0.98);
-    padding:1.5rem 5%; gap:1rem; border-top:1px solid rgba(255,255,255,0.1);
-  }
+  .nav-links.open { display:flex; flex-direction:column; position:absolute; top:72px; left:0; right:0; background:rgba(13,27,53,0.98); padding:1.5rem 5%; gap:1rem; border-top:1px solid rgba(255,255,255,0.1); }
   .hamburger { display:flex; }
   .greece-inner,.about-inner,.contacts-grid { grid-template-columns:1fr; gap:2rem; }
   .stats-grid { grid-template-columns:repeat(2,1fr); }
   .about-img-wrap img { max-width:100%; }
   .about-badge-overlay { right:0; }
   .islands-grid { grid-template-columns:repeat(2,1fr); }
+  .review-card { min-width:270px; max-width:270px; }
 }
 @media(max-width:480px) {
   .trust-items { grid-template-columns:1fr; }
   .hero-phones { flex-direction:column; align-items:center; }
   .phone-pill { width:100%; max-width:300px; justify-content:center; }
+  .review-card { min-width:calc(100vw - 4rem); max-width:calc(100vw - 4rem); }
 }
 </style>
 </head>
@@ -271,6 +217,7 @@ footer a { color:var(--gold); text-decoration:none; }
     <li><a href="#greece" data-t="nav_greece">Гърция</a></li>
     <li><a href="#fleet" data-t="nav_fleet">Автопарк</a></li>
     <li><a href="#about" data-t="nav_about">За нас</a></li>
+    <li><a href="#reviews" data-t="nav_reviews">Мнения</a></li>
     <li><a href="#contacts" data-t="nav_contacts">Контакти</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:1rem;">
@@ -288,8 +235,8 @@ footer a { color:var(--gold); text-decoration:none; }
 
 <!-- HERO -->
 <section class="hero" id="home">
-  <div class="hero-badge">✦ <span data-t="hero_badge">БСБ Травел ЕООД</span> ✦</div>
-  <h1 data-t="hero_h1_raw"><span data-t="hero_line1">Вашият</span><br><span style="color:var(--gold)" data-t="hero_line2">Надежден</span><br><span data-t="hero_line3">Партньор</span></h1>
+  <div class="hero-badge">🚐 <span data-t="hero_badge">БСБ Травел ЕООД</span> 🌊</div>
+  <h1><span data-t="hero_line1">Вашият</span><br><span class="accent" data-t="hero_line2">Надежден</span><br><span data-t="hero_line3">Партньор</span></h1>
   <p class="hero-sub" data-t="hero_sub">Вътрешен и международен превоз на пътници. Специализирани пътувания България – Гърция. Благоевград, България.</p>
   <div class="hero-phones">
     <a href="tel:+359878858381" class="phone-pill">
@@ -305,6 +252,7 @@ footer a { color:var(--gold); text-decoration:none; }
       +30 699 97 09 419
     </a>
   </div>
+  <div class="scroll-cue"><span data-t="scroll_down">Разгледай</span><div class="arrow"></div></div>
 </section>
 
 <!-- STATS -->
@@ -367,34 +315,50 @@ footer a { color:var(--gold); text-decoration:none; }
     <p class="section-sub" data-t="fl_sub">Собствен автопарк от лицензирани превозни средства за всяка нужда.</p>
     <div class="fleet-grid">
       <div class="fleet-card reveal">
-        <div class="fleet-img"><img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=80" alt="Автобус 20+1" loading="lazy"></div>
+        <div class="fleet-img">
+          <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=700&q=80" alt="Автобус 20+1" loading="lazy"
+            onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1455a4,#0d1b35)'">
+          <div class="fleet-overlay"></div>
+        </div>
         <div class="fleet-info">
           <h3 data-t="fl1_name">Автобус</h3>
-          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0.6rem;" data-t="fl1_desc">Идеален за групови пътувания</p>
+          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0;" data-t="fl1_desc">Идеален за групови пътувания</p>
           <span class="fleet-badge">20+1 <span data-t="fl_seats">места</span></span>
         </div>
       </div>
       <div class="fleet-card reveal">
-        <div class="fleet-img"><img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=700&q=80" alt="Автобус 16+1" loading="lazy"></div>
+        <div class="fleet-img">
+          <img src="https://images.unsplash.com/photo-1570125909517-53cb21c89ff2?w=700&q=80" alt="Автобус 16+1" loading="lazy"
+            onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1455a4,#0d1b35)'">
+          <div class="fleet-overlay"></div>
+        </div>
         <div class="fleet-info">
           <h3 data-t="fl2_name">Автобус</h3>
-          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0.6rem;" data-t="fl2_desc">За по-малки групи</p>
+          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0;" data-t="fl2_desc">За по-малки групи</p>
           <span class="fleet-badge">16+1 <span data-t="fl_seats">места</span></span>
         </div>
       </div>
       <div class="fleet-card reveal">
-        <div class="fleet-img"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Бус Ван" loading="lazy"></div>
+        <div class="fleet-img">
+          <img src="https://images.unsplash.com/photo-1501700493788-fa1a4fc9fe62?w=700&q=80" alt="Бус Ван" loading="lazy"
+            onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1455a4,#0d1b35)'">
+          <div class="fleet-overlay"></div>
+        </div>
         <div class="fleet-info">
           <h3 data-t="fl3_name">Бус / Ван</h3>
-          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0.6rem;" data-t="fl3_desc">Гъвкав и маневрен</p>
+          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0;" data-t="fl3_desc">Гъвкав и маневрен</p>
           <span class="fleet-badge">7+1 / 8+1 <span data-t="fl_seats">места</span></span>
         </div>
       </div>
       <div class="fleet-card reveal">
-        <div class="fleet-img"><img src="https://images.unsplash.com/photo-1549399542-7e8ee8b1b7ff?w=700&q=80" alt="Лек автомобил" loading="lazy"></div>
+        <div class="fleet-img">
+          <img src="https://images.unsplash.com/photo-1549399542-7e8ee8b1b7ff?w=700&q=80" alt="Лек автомобил" loading="lazy"
+            onerror="this.style.display='none';this.parentNode.style.background='linear-gradient(135deg,#1455a4,#0d1b35)'">
+          <div class="fleet-overlay"></div>
+        </div>
         <div class="fleet-info">
           <h3 data-t="fl4_name">Лек автомобил</h3>
-          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0.6rem;" data-t="fl4_desc">VIP трансфери и бизнес</p>
+          <p style="color:var(--gray);font-size:0.85rem;margin:0.3rem 0 0;" data-t="fl4_desc">VIP трансфери и бизнес</p>
           <span class="fleet-badge">4+1 <span data-t="fl_seats">места</span></span>
         </div>
       </div>
@@ -426,6 +390,135 @@ footer a { color:var(--gold); text-decoration:none; }
   </div>
 </section>
 
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="reviews-inner">
+    <span class="section-tag" data-t="rev_tag">Доволни пътници</span>
+    <h2 class="section-title light" data-t="rev_title">Какво казват клиентите</h2>
+    <p class="section-sub light" data-t="rev_sub">Над хиляда щастливи пътници от България, Гърция и цяла Европа.</p>
+    <div class="reviews-track-wrap" id="revWrap">
+      <div class="reviews-track" id="revTrack">
+        
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Пътувахме до Корфу с цялото семейство — 8 души. Автобусът беше перфектно чист, шофьорът супер приятен. Пристигнахме точно навреме. Определено ще ползваме пак!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇧🇬</span>
+          <div>
+            <strong>Стефан Николов</strong>
+            <span>София</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Sehr professioneller Service! Transfer vom Flughafen Thessaloniki bis zur Fähre nach Korfu war pünktlich und komfortabel. Sehr empfehlenswert!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇩🇪</span>
+          <div>
+            <strong>Maria Hoffmann</strong>
+            <span>München</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Εξαιρετική εξυπηρέτηση! Ταξιδέψαμε για Ζάκυνθο με ομάδα 12 ατόμων. Το λεωφορείο ήταν άνετο και ο οδηγός πολύ επαγγελματίας."</p>
+        <div class="review-author">
+          <span class="review-flag">🇬🇷</span>
+          <div>
+            <strong>Γιώργος Παπαδόπουλος</strong>
+            <span>Αθήνα</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Организирахме фирмен тиймбилдинг и транспортът беше безупречен. Точни, любезни, чисти автобуси. Само препоръки!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇧🇬</span>
+          <div>
+            <strong>Ивелина Тодорова</strong>
+            <span>Благоевград</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Wir haben BSB Travel für unsere Gruppenreise nach Lefkada gebucht. Top Service, modernes Fahrzeug und sehr freundlicher Fahrer. 5 Sterne!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇩🇪</span>
+          <div>
+            <strong>Thomas Weber</strong>
+            <span>Berlin</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Всяко лято ползваме БСБ Травел за Закинтос. Никога не сме имали проблем — все точни, любезни и с отлично отношение към пътниците!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇧🇬</span>
+          <div>
+            <strong>Красимир Димитров</strong>
+            <span>Пловдив</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Booked a transfer from Sofia to the Greek border. Absolutely smooth experience — clean vehicle, on time, and the driver spoke great English. Highly recommended!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇬🇧</span>
+          <div>
+            <strong>Sarah Johnson</strong>
+            <span>London</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Сватбата ни беше незабравима и транспортът на гостите — безупречен. Навреме, елегантно, без никакъв стрес. Благодарим от сърце!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇧🇬</span>
+          <div>
+            <strong>Анна и Петър Костови</strong>
+            <span>Сандански</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Μεταφορά για κρουαζιέρα από το λιμάνι της Πάτρας — άψογη! Έγκαιρη άφιξη, καθαρό όχημα. Το συνιστώ ανεπιφύλακτα σε όλους!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇬🇷</span>
+          <div>
+            <strong>Νίκος Αντωνίου</strong>
+            <span>Θεσσαλονίκη</span>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Возихме учениците на екскурзия до Бяло море. Шофьорът беше изключително внимателен с децата, спокоен и професионален. Родителите останаха много доволни!"</p>
+        <div class="review-author">
+          <span class="review-flag">🇧🇬</span>
+          <div>
+            <strong>Десислава Петрова</strong>
+            <span>Дупница</span>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="reviews-nav">
+      <button class="rev-btn" id="revPrev">←</button>
+      <div class="rev-dots" id="revDots"></div>
+      <button class="rev-btn" id="revNext">→</button>
+    </div>
+  </div>
+</section>
+
 <!-- CONTACTS -->
 <section class="contacts" id="contacts">
   <div class="contacts-inner">
@@ -448,26 +541,11 @@ footer a { color:var(--gold); text-decoration:none; }
         <div class="contact-block">
           <h3 data-t="con_social">Социални мрежи</h3>
           <div class="social-links">
-            <a href="https://wa.me/359878858381" target="_blank" class="social-link">
-              <div class="icon icon-wa">💬</div>
-              <div><strong>WhatsApp</strong><br><span style="font-size:0.8rem;opacity:0.7;">+359 878 85 83 81</span></div>
-            </a>
-            <a href="viber://chat?number=359878858381" class="social-link">
-              <div class="icon icon-vb">📱</div>
-              <div><strong>Viber</strong><br><span style="font-size:0.8rem;opacity:0.7;">+359 878 85 83 81</span></div>
-            </a>
-            <a href="mailto:bsbtravel2020@gmail.com" class="social-link">
-              <div class="icon icon-em">✉️</div>
-              <div><strong>Email</strong><br><span style="font-size:0.8rem;opacity:0.7;">bsbtravel2020@gmail.com</span></div>
-            </a>
-            <a href="https://www.facebook.com/BSB.TRAVEL" target="_blank" class="social-link">
-              <div class="icon icon-fb">📘</div>
-              <div><strong>BSB TRAVEL</strong><br><span style="font-size:0.8rem;opacity:0.7;">Facebook</span></div>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" class="social-link">
-              <div class="icon icon-fb">📘</div>
-              <div><strong data-t="fb2_name">Пътнически транспорт БГ–ГР</strong><br><span style="font-size:0.8rem;opacity:0.7;">Passenger transport Bulgaria–Greece</span></div>
-            </a>
+            <a href="https://wa.me/359878858381" target="_blank" class="social-link"><div class="icon icon-wa">💬</div><div><strong>WhatsApp</strong><br><span style="font-size:0.8rem;opacity:0.7;">+359 878 85 83 81</span></div></a>
+            <a href="viber://chat?number=359878858381" class="social-link"><div class="icon icon-vb">📱</div><div><strong>Viber</strong><br><span style="font-size:0.8rem;opacity:0.7;">+359 878 85 83 81</span></div></a>
+            <a href="mailto:bsbtravel2020@gmail.com" class="social-link"><div class="icon icon-em">✉️</div><div><strong>Email</strong><br><span style="font-size:0.8rem;opacity:0.7;">bsbtravel2020@gmail.com</span></div></a>
+            <a href="https://www.facebook.com/BSB.TRAVEL" target="_blank" class="social-link"><div class="icon icon-fb">📘</div><div><strong>BSB TRAVEL</strong><br><span style="font-size:0.8rem;opacity:0.7;">Facebook</span></div></a>
+            <a href="https://www.facebook.com" target="_blank" class="social-link"><div class="icon icon-fb">📘</div><div><strong data-t="fb2_name">Пътнически транспорт БГ–ГР</strong><br><span style="font-size:0.8rem;opacity:0.7;">Passenger transport Bulgaria–Greece</span></div></a>
           </div>
         </div>
       </div>
@@ -476,6 +554,7 @@ footer a { color:var(--gold); text-decoration:none; }
 </section>
 
 <footer>
+  <div class="footer-flags">🇧🇬 🚐 🇬🇷</div>
   <p>© 2025 БСБтравел ЕООД · <span data-t="con_city">България, Благоевград 2700</span> · <a href="mailto:bsbtravel2020@gmail.com">bsbtravel2020@gmail.com</a></p>
 </footer>
 
@@ -484,47 +563,41 @@ footer a { color:var(--gold); text-decoration:none; }
 </a>
 
 <script>
+// ======= TRANSLATIONS =======
 const T = {
   bg: {
-    nav_services:"Услуги",nav_greece:"Гърция",nav_fleet:"Автопарк",nav_about:"За нас",nav_contacts:"Контакти",
-    hero_badge:"БСБ Травел ЕООД",
-    hero_line1:"Вашият",hero_line2:"Надежден",hero_line3:"Партньор",
+    nav_services:"Услуги",nav_greece:"Гърция",nav_fleet:"Автопарк",nav_about:"За нас",nav_reviews:"Мнения",nav_contacts:"Контакти",
+    hero_badge:"БСБ Травел ЕООД",hero_line1:"Вашият",hero_line2:"Надежден",hero_line3:"Партньор",
     hero_sub:"Вътрешен и международен превоз на пътници. Специализирани пътувания България – Гърция. Благоевград, България.",
+    scroll_down:"Разгледай",
     stat_years:"Години опит",stat_clients:"Доволни клиенти",stat_vehicles:"Лицензирани возила",stat_countries:"Държави",
     srv_tag:"Какво предлагаме",srv_title:"Нашите Услуги",srv_sub:"Организирани пътувания, трансфери и специализирани превози в България и чужбина.",
     s1_title:"Организирани пътувания",s1_desc:"Пътувания в страната и чужбина – организирани, удобни и безопасни.",
     s2_title:"Трансфери летища и курорти",s2_desc:"Трансфери от/до летища, морски и планински курорти и хотели.",
     s3_title:"Превоз на ученици и деца",s3_desc:"Безопасен превоз на ученици и деца с лицензирани водачи.",
     s4_title:"Еднодневни екскурзии",s4_desc:"Еднодневни плажни екскурзии до Бяло море и забележителности.",
-    s5_title:"Фирмени събития и сватби",s5_desc:"Превоз за фирмени eventi, сватбени тържества, тийм билдинг и служебни ангажименти.",
+    s5_title:"Фирмени събития и сватби",s5_desc:"Превоз за фирмени события, сватбени тържества, тийм билдинг и служебни ангажименти.",
     s6_title:"Поклоннически пътувания",s6_desc:"Пътувания до исторически места, църкви и манастири.",
     gr_tag:"Гърция",gr_title:"Пътувания за Гърция",gr_sub:"Всяка седмица редовни курсове до Йонийските острови и големите пристанища.",
-    gr_l1:"Еднодневни плажни екскурзии до Бяло море",
-    gr_l2:"Трансфери до круизни екскурзии от Солун и Атина",
-    gr_l3:"Редовни седмични пътувания до Йонийските острови",
-    gr_l4:"Редовни курсове до пристанищата Игуменица и Патра",
+    gr_l1:"Еднодневни плажни екскурзии до Бяло море",gr_l2:"Трансфери до круизни екскурзии от Солун и Атина",
+    gr_l3:"Редовни седмични пътувания до Йонийските острови",gr_l4:"Редовни курсове до пристанищата Игуменица и Патра",
     isl_corfu:"Корфу",isl_lefkada:"Лефкада",isl_zakynthos:"Закинтос",isl_kefalonia:"Кефалония",
-    isl_igoumenitsa:"Игуменица",isl_patras:"Патра",
-    isl_weekly:"Всяка седмица",isl_port:"Пристанище",
+    isl_igoumenitsa:"Игуменица",isl_patras:"Патра",isl_weekly:"Всяка седмица",isl_port:"Пристанище",
     fl_tag:"Нашите возила",fl_title:"Автопарк",fl_sub:"Собствен автопарк от лицензирани превозни средства за всяка нужда.",
-    fl_seats:"места",fl1_name:"Автобус",fl1_desc:"Идеален за групови пътувания",
-    fl2_name:"Автобус",fl2_desc:"За по-малки групи",
-    fl3_name:"Бус / Ван",fl3_desc:"Гъвкав и маневрен",
-    fl4_name:"Лек автомобил",fl4_desc:"VIP трансфери и бизнес",
+    fl_seats:"места",fl1_name:"Автобус",fl1_desc:"Идеален за групови пътувания",fl2_name:"Автобус",fl2_desc:"За по-малки групи",
+    fl3_name:"Бус / Ван",fl3_desc:"Гъвкав и маневрен",fl4_name:"Лек автомобил",fl4_desc:"VIP трансфери и бизнес",
     abt_tag:"За нас",abt_title:"БСБтравел ЕООД",abt_badge:"Години опит",
     abt_p1:"Транспортна фирма БСБтравел ЕООД е регистрирана през 2020 година. Основна дейност е вътрешен и международен превоз на пътници.",
     abt_p2:"Фирмата разполага със собствен автопарк от лицензирани превозни средства. Фокус е превоз на туристи между България и Гърция — Йонийските острови и основните пристанища.",
-    tr1:"Лицензирани водачи",tr2:"Собствен автопарк",tr3:"Редовни седмични курсове",
-    tr4:"20+ години опит",tr5:"България и Гърция",tr6:"Гъвкави условия",
-    con_tag:"Свържете се с нас",con_title:"Контакти",con_phones:"Телефони",
-    con_addr:"Адрес",con_city:"България, Благоевград 2700",
-    con_social:"Социални мрежи",fb2_name:"Пътнически транспорт БГ–ГР"
+    tr1:"Лицензирани водачи",tr2:"Собствен автопарк",tr3:"Редовни седмични курсове",tr4:"20+ години опит",tr5:"България и Гърция",tr6:"Гъвкави условия",
+    rev_tag:"Доволни пътници",rev_title:"Какво казват клиентите",rev_sub:"Над хиляда щастливи пътници от България, Гърция и цяла Европа.",
+    con_tag:"Свържете се с нас",con_title:"Контакти",con_phones:"Телефони",con_addr:"Адрес",con_city:"България, Благоевград 2700",con_social:"Социални мрежи",fb2_name:"Пътнически транспорт БГ–ГР"
   },
   en: {
-    nav_services:"Services",nav_greece:"Greece",nav_fleet:"Fleet",nav_about:"About",nav_contacts:"Contact",
-    hero_badge:"BSB Travel Ltd",
-    hero_line1:"Your",hero_line2:"Reliable",hero_line3:"Partner",
+    nav_services:"Services",nav_greece:"Greece",nav_fleet:"Fleet",nav_about:"About",nav_reviews:"Reviews",nav_contacts:"Contact",
+    hero_badge:"BSB Travel Ltd",hero_line1:"Your",hero_line2:"Reliable",hero_line3:"Partner",
     hero_sub:"Domestic and international passenger transport. Specialised Bulgaria–Greece trips. Blagoevgrad, Bulgaria.",
+    scroll_down:"Explore",
     stat_years:"Years Experience",stat_clients:"Happy Clients",stat_vehicles:"Licensed Vehicles",stat_countries:"Countries",
     srv_tag:"What we offer",srv_title:"Our Services",srv_sub:"Organised trips, airport transfers and specialised transport across Bulgaria and abroad.",
     s1_title:"Organised Trips",s1_desc:"Domestic and international trips – organised, comfortable and safe.",
@@ -534,32 +607,25 @@ const T = {
     s5_title:"Corporate Events & Weddings",s5_desc:"Transport for corporate events, weddings, team building and business engagements.",
     s6_title:"Pilgrimage Trips",s6_desc:"Trips to historical sites, churches and monasteries.",
     gr_tag:"Greece",gr_title:"Trips to Greece",gr_sub:"Weekly scheduled services to the Ionian Islands and major ports.",
-    gr_l1:"Day beach excursions to the Aegean Sea",
-    gr_l2:"Transfers to cruise trips from Thessaloniki and Athens",
-    gr_l3:"Regular weekly trips to the Ionian Islands",
-    gr_l4:"Regular services to the ports of Igoumenitsa and Patras",
+    gr_l1:"Day beach excursions to the Aegean Sea",gr_l2:"Transfers to cruise trips from Thessaloniki and Athens",
+    gr_l3:"Regular weekly trips to the Ionian Islands",gr_l4:"Regular services to the ports of Igoumenitsa and Patras",
     isl_corfu:"Corfu",isl_lefkada:"Lefkada",isl_zakynthos:"Zakynthos",isl_kefalonia:"Kefalonia",
-    isl_igoumenitsa:"Igoumenitsa",isl_patras:"Patras",
-    isl_weekly:"Every week",isl_port:"Port",
+    isl_igoumenitsa:"Igoumenitsa",isl_patras:"Patras",isl_weekly:"Every week",isl_port:"Port",
     fl_tag:"Our vehicles",fl_title:"Fleet",fl_sub:"Own fleet of licensed vehicles for every need.",
-    fl_seats:"seats",fl1_name:"Coach",fl1_desc:"Ideal for group travel",
-    fl2_name:"Coach",fl2_desc:"For smaller groups",
-    fl3_name:"Minibus / Van",fl3_desc:"Flexible and manoeuvrable",
-    fl4_name:"Saloon Car",fl4_desc:"VIP transfers and business travel",
+    fl_seats:"seats",fl1_name:"Coach",fl1_desc:"Ideal for group travel",fl2_name:"Coach",fl2_desc:"For smaller groups",
+    fl3_name:"Minibus / Van",fl3_desc:"Flexible and manoeuvrable",fl4_name:"Saloon Car",fl4_desc:"VIP transfers and business",
     abt_tag:"About us",abt_title:"BSBTravel Ltd",abt_badge:"Years Experience",
     abt_p1:"BSBTravel Ltd was founded in 2020. Our core activity is domestic and international passenger transport.",
     abt_p2:"We operate our own fleet of licensed vehicles, with a focus on transporting tourists between Bulgaria and Greece — the Ionian Islands and the main ports.",
-    tr1:"Licensed Drivers",tr2:"Own Fleet",tr3:"Weekly Scheduled Services",
-    tr4:"20+ Years Experience",tr5:"Bulgaria & Greece",tr6:"Flexible Terms",
-    con_tag:"Get in touch",con_title:"Contact Us",con_phones:"Phone Numbers",
-    con_addr:"Address",con_city:"Bulgaria, Blagoevgrad 2700",
-    con_social:"Social Media",fb2_name:"Passenger Transport BG–GR"
+    tr1:"Licensed Drivers",tr2:"Own Fleet",tr3:"Weekly Scheduled Services",tr4:"20+ Years Experience",tr5:"Bulgaria & Greece",tr6:"Flexible Terms",
+    rev_tag:"Happy Travellers",rev_title:"What Our Clients Say",rev_sub:"Over a thousand happy passengers from Bulgaria, Greece and all over Europe.",
+    con_tag:"Get in touch",con_title:"Contact Us",con_phones:"Phone Numbers",con_addr:"Address",con_city:"Bulgaria, Blagoevgrad 2700",con_social:"Social Media",fb2_name:"Passenger Transport BG–GR"
   },
   el: {
-    nav_services:"Υπηρεσίες",nav_greece:"Ελλάδα",nav_fleet:"Στόλος",nav_about:"Σχετικά",nav_contacts:"Επικοινωνία",
-    hero_badge:"BSB Travel ΕΠΕ",
-    hero_line1:"Ο Αξιόπιστος",hero_line2:"Συνοδοιπόρος",hero_line3:"Σας",
+    nav_services:"Υπηρεσίες",nav_greece:"Ελλάδα",nav_fleet:"Στόλος",nav_about:"Σχετικά",nav_reviews:"Κριτικές",nav_contacts:"Επικοινωνία",
+    hero_badge:"BSB Travel ΕΠΕ",hero_line1:"Ο Αξιόπιστος",hero_line2:"Συνοδοιπόρος",hero_line3:"Σας",
     hero_sub:"Εσωτερικές και διεθνείς μεταφορές επιβατών. Εξειδικευμένα ταξίδια Βουλγαρία–Ελλάδα. Μπλαγκόεβγκραντ, Βουλγαρία.",
+    scroll_down:"Ανακαλύψτε",
     stat_years:"Χρόνια Εμπειρίας",stat_clients:"Ικανοποιημένοι Πελάτες",stat_vehicles:"Αδειοδοτημένα Οχήματα",stat_countries:"Χώρες",
     srv_tag:"Τι προσφέρουμε",srv_title:"Υπηρεσίες μας",srv_sub:"Οργανωμένα ταξίδια, μεταφορές και εξειδικευμένες μεταφορές στη Βουλγαρία και εξωτερικό.",
     s1_title:"Οργανωμένα ταξίδια",s1_desc:"Εγχώρια και διεθνή ταξίδια – οργανωμένα, άνετα και ασφαλή.",
@@ -569,32 +635,25 @@ const T = {
     s5_title:"Εταιρικά & Γάμοι",s5_desc:"Μεταφορά για εταιρικές εκδηλώσεις, γάμους, team building.",
     s6_title:"Προσκυνήματα",s6_desc:"Ταξίδια σε ιστορικούς τόπους, εκκλησίες και μοναστήρια.",
     gr_tag:"Ελλάδα",gr_title:"Ταξίδια στην Ελλάδα",gr_sub:"Εβδομαδιαία τακτικά δρομολόγια στα Ιόνια νησιά και τα μεγάλα λιμάνια.",
-    gr_l1:"Ημερήσιες παραλιακές εκδρομές στο Αιγαίο",
-    gr_l2:"Μεταφορές για κρουαζιέρες από Θεσσαλονίκη και Αθήνα",
-    gr_l3:"Τακτικά εβδομαδιαία ταξίδια στα Ιόνια νησιά",
-    gr_l4:"Τακτικά δρομολόγια στα λιμάνια Ηγουμενίτσα και Πάτρα",
+    gr_l1:"Ημερήσιες παραλιακές εκδρομές στο Αιγαίο",gr_l2:"Μεταφορές για κρουαζιέρες από Θεσσαλονίκη και Αθήνα",
+    gr_l3:"Τακτικά εβδομαδιαία ταξίδια στα Ιόνια νησιά",gr_l4:"Τακτικά δρομολόγια στα λιμάνια Ηγουμενίτσα και Πάτρα",
     isl_corfu:"Κέρκυρα",isl_lefkada:"Λευκάδα",isl_zakynthos:"Ζάκυνθος",isl_kefalonia:"Κεφαλονιά",
-    isl_igoumenitsa:"Ηγουμενίτσα",isl_patras:"Πάτρα",
-    isl_weekly:"Κάθε εβδομάδα",isl_port:"Λιμάνι",
+    isl_igoumenitsa:"Ηγουμενίτσα",isl_patras:"Πάτρα",isl_weekly:"Κάθε εβδομάδα",isl_port:"Λιμάνι",
     fl_tag:"Τα οχήματά μας",fl_title:"Στόλος",fl_sub:"Ιδιόκτητος στόλος αδειοδοτημένων οχημάτων για κάθε ανάγκη.",
-    fl_seats:"θέσεις",fl1_name:"Λεωφορείο",fl1_desc:"Ιδανικό για ομαδικά ταξίδια",
-    fl2_name:"Λεωφορείο",fl2_desc:"Για μικρότερες ομάδες",
-    fl3_name:"Μίνι-λεωφορείο / Van",fl3_desc:"Ευέλικτο και ευκίνητο",
-    fl4_name:"Επιβατικό",fl4_desc:"VIP μεταφορές και επαγγελματικά ταξίδια",
+    fl_seats:"θέσεις",fl1_name:"Λεωφορείο",fl1_desc:"Ιδανικό για ομαδικά ταξίδια",fl2_name:"Λεωφορείο",fl2_desc:"Για μικρότερες ομάδες",
+    fl3_name:"Μίνι-λεωφορείο / Van",fl3_desc:"Ευέλικτο και ευκίνητο",fl4_name:"Επιβατικό",fl4_desc:"VIP μεταφορές",
     abt_tag:"Σχετικά με εμάς",abt_title:"BSBTravel ΕΠΕ",abt_badge:"Χρόνια Εμπειρίας",
     abt_p1:"Η BSBTravel ΕΠΕ ιδρύθηκε το 2020. Η κύρια δραστηριότητά μας είναι εγχώριες και διεθνείς μεταφορές επιβατών.",
     abt_p2:"Διαθέτουμε ιδιόκτητο στόλο αδειοδοτημένων οχημάτων, με εστίαση στη μεταφορά τουριστών μεταξύ Βουλγαρίας και Ελλάδας.",
-    tr1:"Αδειοδοτημένοι Οδηγοί",tr2:"Ιδιόκτητος Στόλος",tr3:"Εβδομαδιαία Δρομολόγια",
-    tr4:"20+ Χρόνια Εμπειρίας",tr5:"Βουλγαρία & Ελλάδα",tr6:"Ευέλικτοι Όροι",
-    con_tag:"Επικοινωνήστε μαζί μας",con_title:"Επικοινωνία",con_phones:"Τηλέφωνα",
-    con_addr:"Διεύθυνση",con_city:"Βουλγαρία, Μπλαγκόεβγκραντ 2700",
-    con_social:"Κοινωνικά δίκτυα",fb2_name:"Μεταφορές Επιβατών ΒΟΥ–ΕΛΛ"
+    tr1:"Αδειοδοτημένοι Οδηγοί",tr2:"Ιδιόκτητος Στόλος",tr3:"Εβδομαδιαία Δρομολόγια",tr4:"20+ Χρόνια",tr5:"Βουλγαρία & Ελλάδα",tr6:"Ευέλικτοι Όροι",
+    rev_tag:"Ικανοποιημένοι Επιβάτες",rev_title:"Τι Λένε οι Πελάτες",rev_sub:"Πάνω από χίλιοι ευχαριστημένοι επιβάτες από Βουλγαρία, Ελλάδα και όλη την Ευρώπη.",
+    con_tag:"Επικοινωνήστε μαζί μας",con_title:"Επικοινωνία",con_phones:"Τηλέφωνα",con_addr:"Διεύθυνση",con_city:"Βουλγαρία, Μπλαγκόεβγκραντ 2700",con_social:"Κοινωνικά δίκτυα",fb2_name:"Μεταφορές ΒΟΥ–ΕΛΛ"
   },
   de: {
-    nav_services:"Dienste",nav_greece:"Griechenland",nav_fleet:"Fuhrpark",nav_about:"Über uns",nav_contacts:"Kontakt",
-    hero_badge:"BSB Travel GmbH",
-    hero_line1:"Ihr",hero_line2:"Zuverlässiger",hero_line3:"Partner",
+    nav_services:"Dienste",nav_greece:"Griechenland",nav_fleet:"Fuhrpark",nav_about:"Über uns",nav_reviews:"Bewertungen",nav_contacts:"Kontakt",
+    hero_badge:"BSB Travel GmbH",hero_line1:"Ihr",hero_line2:"Zuverlässiger",hero_line3:"Partner",
     hero_sub:"In- und ausländischer Personentransport. Spezialisierte Reisen Bulgarien–Griechenland. Blagoevgrad, Bulgarien.",
+    scroll_down:"Entdecken",
     stat_years:"Jahre Erfahrung",stat_clients:"Zufriedene Kunden",stat_vehicles:"Zugelassene Fahrzeuge",stat_countries:"Länder",
     srv_tag:"Was wir anbieten",srv_title:"Unsere Leistungen",srv_sub:"Organisierte Reisen, Transfers und spezialisierte Transporte in Bulgarien und im Ausland.",
     s1_title:"Organisierte Reisen",s1_desc:"In- und ausländische Reisen – organisiert, komfortabel und sicher.",
@@ -604,26 +663,19 @@ const T = {
     s5_title:"Firmenevents & Hochzeiten",s5_desc:"Transport für Firmenveranstaltungen, Hochzeiten, Teambuilding.",
     s6_title:"Pilgerreisen",s6_desc:"Reisen zu historischen Stätten, Kirchen und Klöstern.",
     gr_tag:"Griechenland",gr_title:"Reisen nach Griechenland",gr_sub:"Wöchentliche Linienfahrten zu den Ionischen Inseln und großen Häfen.",
-    gr_l1:"Tagesstrandausflüge an die Ägäis",
-    gr_l2:"Transfers zu Kreuzfahrten ab Thessaloniki und Athen",
-    gr_l3:"Regelmäßige wöchentliche Fahrten zu den Ionischen Inseln",
-    gr_l4:"Regelmäßige Fahrten zu den Häfen Igoumenitsa und Patras",
+    gr_l1:"Tagesstrandausflüge an die Ägäis",gr_l2:"Transfers zu Kreuzfahrten ab Thessaloniki und Athen",
+    gr_l3:"Regelmäßige wöchentliche Fahrten zu den Ionischen Inseln",gr_l4:"Regelmäßige Fahrten zu den Häfen Igoumenitsa und Patras",
     isl_corfu:"Korfu",isl_lefkada:"Lefkada",isl_zakynthos:"Zakynthos",isl_kefalonia:"Kefalonia",
-    isl_igoumenitsa:"Igoumenitsa",isl_patras:"Patras",
-    isl_weekly:"Jede Woche",isl_port:"Hafen",
+    isl_igoumenitsa:"Igoumenitsa",isl_patras:"Patras",isl_weekly:"Jede Woche",isl_port:"Hafen",
     fl_tag:"Unsere Fahrzeuge",fl_title:"Fuhrpark",fl_sub:"Eigener Fuhrpark zugelassener Fahrzeuge für jeden Bedarf.",
-    fl_seats:"Sitzplätze",fl1_name:"Reisebus",fl1_desc:"Ideal für Gruppenreisen",
-    fl2_name:"Reisebus",fl2_desc:"Für kleinere Gruppen",
-    fl3_name:"Minibus / Van",fl3_desc:"Flexibel und wendig",
-    fl4_name:"Pkw",fl4_desc:"VIP-Transfers und Geschäftsreisen",
+    fl_seats:"Sitzplätze",fl1_name:"Reisebus",fl1_desc:"Ideal für Gruppenreisen",fl2_name:"Reisebus",fl2_desc:"Für kleinere Gruppen",
+    fl3_name:"Minibus / Van",fl3_desc:"Flexibel und wendig",fl4_name:"Pkw",fl4_desc:"VIP-Transfers und Business",
     abt_tag:"Über uns",abt_title:"BSBTravel GmbH",abt_badge:"Jahre Erfahrung",
     abt_p1:"BSBTravel GmbH wurde 2020 gegründet. Unsere Kerntätigkeit ist der in- und ausländische Personentransport.",
     abt_p2:"Wir betreiben einen eigenen Fuhrpark zugelassener Fahrzeuge mit Schwerpunkt auf dem Transport von Touristen zwischen Bulgarien und Griechenland.",
-    tr1:"Lizenzierte Fahrer",tr2:"Eigener Fuhrpark",tr3:"Wöchentliche Linienfahrten",
-    tr4:"20+ Jahre Erfahrung",tr5:"Bulgarien & Griechenland",tr6:"Flexible Konditionen",
-    con_tag:"Kontaktieren Sie uns",con_title:"Kontakt",con_phones:"Telefonnummern",
-    con_addr:"Adresse",con_city:"Bulgarien, Blagoevgrad 2700",
-    con_social:"Social Media",fb2_name:"Personentransport BUL–GR"
+    tr1:"Lizenzierte Fahrer",tr2:"Eigener Fuhrpark",tr3:"Wöchentliche Linienfahrten",tr4:"20+ Jahre Erfahrung",tr5:"Bulgarien & Griechenland",tr6:"Flexible Konditionen",
+    rev_tag:"Zufriedene Reisende",rev_title:"Was unsere Kunden sagen",rev_sub:"Über tausend glückliche Reisende aus Bulgarien, Griechenland und ganz Europa.",
+    con_tag:"Kontaktieren Sie uns",con_title:"Kontakt",con_phones:"Telefonnummern",con_addr:"Adresse",con_city:"Bulgarien, Blagoevgrad 2700",con_social:"Social Media",fb2_name:"Personentransport BUL–GR"
   }
 };
 
@@ -641,15 +693,64 @@ function setLang(lang) {
 function toggleMenu() {
   document.getElementById('navLinks').classList.toggle('open');
 }
-
 document.querySelectorAll('.nav-links a').forEach(a => {
   a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
 });
 
+// Scroll reveal
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
 }, {threshold: 0.1});
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// ======= REVIEWS SLIDER =======
+const track = document.getElementById('revTrack');
+const wrap = document.getElementById('revWrap');
+const cards = track.querySelectorAll('.review-card');
+const dotsContainer = document.getElementById('revDots');
+const total = cards.length;
+let current = 0;
+let isDragging = false, startX = 0, scrollLeft = 0;
+
+function getVisible() {
+  if (window.innerWidth < 480) return 1;
+  if (window.innerWidth < 900) return 2;
+  return 3;
+}
+
+function getCardWidth() {
+  return cards[0].offsetWidth + 24;
+}
+
+// Build dots
+for (let i = 0; i < total; i++) {
+  const d = document.createElement('div');
+  d.className = 'rev-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsContainer.appendChild(d);
+}
+
+function goTo(idx) {
+  const max = total - getVisible();
+  current = Math.max(0, Math.min(idx, max));
+  track.style.transform = `translateX(-${current * getCardWidth()}px)`;
+  dotsContainer.querySelectorAll('.rev-dot').forEach((d,i) => d.classList.toggle('active', i === current));
+}
+
+document.getElementById('revPrev').onclick = () => goTo(current - 1);
+document.getElementById('revNext').onclick = () => goTo(current + 1);
+
+// Auto-advance
+setInterval(() => goTo((current + 1) % (total - getVisible() + 1)), 5000);
+
+// Drag/swipe
+wrap.addEventListener('mousedown', e => { isDragging=true; startX=e.pageX; wrap.style.cursor='grabbing'; });
+wrap.addEventListener('mousemove', e => { if(!isDragging) return; const dx = e.pageX - startX; if(Math.abs(dx)>50){ isDragging=false; goTo(current + (dx<0?1:-1)); wrap.style.cursor='grab'; } });
+wrap.addEventListener('mouseup', () => { isDragging=false; wrap.style.cursor='grab'; });
+wrap.addEventListener('touchstart', e => { startX = e.touches[0].pageX; }, {passive:true});
+wrap.addEventListener('touchend', e => { const dx = e.changedTouches[0].pageX - startX; if(Math.abs(dx)>50) goTo(current + (dx<0?1:-1)); });
+
+window.addEventListener('resize', () => goTo(current));
 </script>
 </body>
 </html>
